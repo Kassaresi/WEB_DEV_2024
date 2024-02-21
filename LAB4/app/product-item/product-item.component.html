@@ -1,0 +1,22 @@
+<div  class="product-item" >
+    <div class="product-img">
+        <img class = "something" src={{product.img}} alt="product" >
+    </div>
+    <h3>
+        <a  [title]="product.name + ' details'" 
+            [routerLink]="['/products', product.id]">
+            {{product.name}}
+        </a>
+    </h3>
+
+    <p *ngIf="product.description">
+        Description: {{ product.description }}
+    </p>
+    <p *ngIf="product.rating">
+        Rating: {{ product.rating }}
+    </p>
+    <button type="button" (click)="share(product.kaspi_link)">
+        Share
+    </button>
+
+</div>
