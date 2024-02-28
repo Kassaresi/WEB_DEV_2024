@@ -1,0 +1,28 @@
+.categories-container{
+    /* background-color: rgb(255, 153, 0); */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0 10px 0;
+    
+}
+.categories-container__category, button{
+    background-color: rgb(245, 37, 37);
+    border-radius: 10rem;
+    font-weight: 60;
+    color: white;
+    margin:auto;
+    width: 200px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+.categories-container__category:hover{
+    color: #DBDBDB;
+    cursor: pointer;
+    border: #000;
+}
+.categories-container__category.active{
+    color: #000;
+}
+

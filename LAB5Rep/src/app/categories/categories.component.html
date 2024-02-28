@@ -1,0 +1,5 @@
+<div class="categories-container">
+    <div (click)="selectCategory(category.id)"  id={{category.id}} class="categories-container__category" *ngFor="let category of categories">
+        {{category.title}} 
+    </div>
+</div>

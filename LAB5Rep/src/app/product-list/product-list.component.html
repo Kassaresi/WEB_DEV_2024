@@ -1,0 +1,10 @@
+<button id="btn-get" (click)="getCategory()">Get category</button>
+<h2>Products</h2>
+<p> {{change}} </p>
+<div class="products-list">
+    <div class="product_item"  *ngFor="let product of products" >
+        <app-product-item  [product] = "product">
+        </app-product-item>
+        <span (click)="deleteProd(product.id-1)" class="del-btn">x</span>
+    </div>
+</div>

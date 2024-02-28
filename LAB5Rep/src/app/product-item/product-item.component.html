@@ -1,0 +1,31 @@
+<div  class="product-item" >
+    <div class="product-img">
+        <img class = "something" src={{product.img}} alt="product" >
+    </div>
+    <h3>
+        <a  [title]="product.name + ' details'" 
+            [routerLink]="['/products', product.id]">
+            {{product.name}}
+        </a>
+    </h3>
+
+    <p *ngIf="product.description">
+        Description: {{ product.description }}
+    </p>
+    <p *ngIf="product.rating">
+        Rating: {{ product.rating }}
+    </p>
+    <button type="button" (click)="share(product.kaspi_link)">
+        Share
+    </button>
+
+    <app-product-alerts
+        (notify)="onNotify()"
+        [product]="product">
+    </app-product-alerts>
+    
+    <div class="like">
+        <img (click)="like(product.id-1)" width="25px" height="25px" src="https://cdn.worldvectorlogo.com/logos/facebook-reaction-like.svg" alt="">
+        {{product.like}}
+    </div>
+</div>
