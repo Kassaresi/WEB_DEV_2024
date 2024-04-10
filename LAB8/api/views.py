@@ -2,7 +2,7 @@ from django.http.response import JsonResponse
 
 from api.models import Category, Product
 
-# Create your views here.
+
 def get_categories(request):
     categories = Category.objects.all()
     categories_json = [category.to_json() for category in categories]
@@ -11,7 +11,7 @@ def get_categories(request):
 
 
 def get_category(request, pk=None):
-    try:
+    try:  
         category = Category.objects.get(id=pk)
         return JsonResponse(category.to_json())
     except Category.DoesNotExist as e:
@@ -41,3 +41,7 @@ def get_products_by_categories(request, pk = None):
     products = Product.objects.filter(category = category)
     products_json = [product.to_json() for product in products]  
     return JsonResponse(products_json, safe=False)  
+
+
+def get_top_ten(request):
+    return ''
