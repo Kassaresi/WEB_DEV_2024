@@ -28,6 +28,12 @@ class SerializerCompany(serializers.Serializer):
 
 class SerializerVacancy(serializers.Serializer):
     
+    id =          serializers.IntegerField()
+    name =        serializers.CharField()
+    description = serializers.CharField()
+    salary =      serializers.FloatField()
+    Company =     SerializerCompany()
+    
     def create(self, validated_data):
        company_data = validated_data.pop('Company')
        company_id = company_data.get('id')
